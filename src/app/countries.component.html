@@ -1,0 +1,35 @@
+<h1>
+    Olympics Directory
+</h1>
+
+<div class="container" style="margin-top:70px;">
+    <div class="row">
+    <div class="col-sm-12">
+    <!--country stuff -->
+    <div *ngFor="let country of webService.country_list | paginate : {
+        itemsPerPage: 10, currentPage: p};">
+    <div class="card text-white bg-dark mb-3"
+    [routerLink]="['/countries', country._id]"  
+    style = "width: 50rem; margin: auto; cursor: pointer">
+    <div class="card-header">
+
+    {{ country.NOCTeam }}
+    </div>
+    <div class="card-body">
+    Country Rank is
+    {{ country.Rank }}
+    </div>
+    <div class="card-footer">
+    {{ country.TotalMedals }}
+    Total Medals
+    <!--country stuff -->
+    </div>
+    </div>
+    </div>
+    </div> <!-- col -->
+    </div> <!-- row -->
+    <div class="row">
+        <div class="center">
+          <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+        </div>
+   </div> <!-- container -->
