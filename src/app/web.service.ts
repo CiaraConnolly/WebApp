@@ -16,7 +16,7 @@ export class WebService {
     str: any;
 
     
-    //Retrive All images
+    //Retrive All images - test
     RAI = "https://prod-10.eastus.logic.azure.com:443/workflows/3c4baba5d2e0486991b63e0f54e44836/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=r7vYI59v2SbN1oKq5jTl1rYag1LiHVTXi3nob5UrWKE";
     //Half of the link for image
     BLOB_ACCOUNT = "https://blobcom682.blob.core.windows.net";
