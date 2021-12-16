@@ -1,0 +1,55 @@
+<body>
+    <div class="container" style="margin-top:90px;">
+      <div class="row">
+      <div class="col-sm-12">
+  <div class="card text-white bg-primary mb-3"
+   style = "width: 50rem; margin: auto; text-align:center;">
+      <div class = “card-header”>
+      <!-- the card header text -->
+      <h1>
+          Welcome to your follower feed!
+      </h1>
+      </div>
+      <div class = “card-body”>
+      <!-- the card body text -->
+      </div>
+      <div class = “card-footer”>
+      <!-- the card footer text -->
+      </div>
+      </div>
+  </div> <!-- col -->
+  </div> <!-- row -->
+  </div> <!-- container -->
+  
+          <!-- View Posts Area-->
+          <div class="container" style="text-align:center">
+            <div class="row">
+                <div class="col-sn-12">
+                  <div *ngFor="let follow of webService.following">
+                    <div class="card text-white bg-dark mb-3" style = "width: 50rem; text-align:center">
+                      <div class="card-header">
+                        <img src = "{{webService.imagePath}}{{follow.filePath}}" class="center" style="width: 500px;">
+                      </div>
+                      <div class="card-body">
+                        Comment:
+                        {{follow.postComment}}
+                        <br>
+                        Uploaded by:
+                        {{follow.userName}}
+                        <br>
+                        UserId:
+                        {{follow.createdBy}}
+                        <br>
+                        PostId:
+                        {{follow.id}}
+                      <div class="card-footer">
+                        Date:
+                        {{follow.date}}
+                      </div>
+                      <div style="padding:5px;">
+                    </div>
+                    </div>
+                  </div>
+                </div> <!-- col -->
+            </div>
+          </div><!-- container -->

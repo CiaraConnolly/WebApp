@@ -1,0 +1,113 @@
+<!-- TITLE AREA-->
+<body><!-- body -->
+<div class="container" style="margin-top:90px;"> <!-- the container -->
+  <div class="row"> <!-- row -->
+    <div class="col-sm-12"> <!-- column -->
+      <!-- Bootstrap card start -->
+      <div class="card text-white bg-primary mb-3" style = "width: 50rem; margin: auto; text-align:center;">
+        <div class = "card-header">
+        <!-- the card header text -->
+        <h1>
+            Welcome to this Social Media App!
+        </h1>
+        </div>
+        <!-- Bootstrap card end -->
+      </div>
+    </div> <!-- col -->
+  </div> <!-- row -->
+</div> <!-- container -->
+
+<!-- VIEW POSTS AREA-->
+<div class="container" style="text-align:center"> <!-- the container -->
+  <div class="row"> <!-- row -->
+    <div class="col-sn-12"> <!-- column -->
+      <!-- for loop of posts list -->
+      <div *ngFor="let post of webService.posts_list"> 
+        <!-- Bootstrap card start -->
+        <div class="card text-white bg-dark mb-3" style = "width: 50rem; text-align:center">
+          <div class="card-header">
+            <!-- the card header text -->
+            <!-- Display post image -->
+            <img src = "{{webService.imagePath}}{{post.filePath}}" class="center" style="width: 500px;">
+          </div>
+          <div class="card-body">
+            <!-- the card body text -->
+            Comment:
+            {{post.postComment}}
+            <br>
+            Uploaded by:
+            {{post.userName}}
+            <br>
+            UserId:
+            {{post.createdBy}}
+            <br>
+            PostId:
+            {{post.id}}
+          </div>
+          <div class="card-footer">
+            <!-- the card footer text -->
+            <h4>Reply</h4>
+            <form method="POST" style="font-size: 10pt;" [formGroup]="replyForm"  (ngSubmit)="submitReply(post.id)" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="replyComment" class="form-label"></label>
+                <input type="textarea" class="form-control" id="replyComment" formControlName="replyComment">
+              </div>
+              <br>
+              <button type="submit" id="replyForm" class="btn btn-primary">Submit Reply</button> <br/><br/>
+            </form>
+            <!-- Display replies button -->
+            <br>
+            <div><!-- replies button div start -->
+              <button class="btn btn-sm btn-danger" (click)="getReplies(post.id)">Display replies</button>
+              {{post.replyComment}}
+            </div><!-- replies button div end -->
+            <br>
+            <div><!-- follow button div start -->
+              <button class="btn btn-sm btn-danger" (click)="follow(post.createdBy)">Follow</button>
+              <br>
+            </div><!-- follow button div end -->
+          </div>
+          <!-- Bootstrap card end -->
+        </div>
+        <!-- for loop of posts list end -->
+      </div>
+    </div> <!-- col -->
+  </div> <!-- row -->
+</div> <!-- container -->
+
+<!--COMMENTS-->
+<div class="container">
+    <div class="row"> <!-- row -->
+      <div class="col-sn-12"> <!-- col -->
+        <!-- for loop of replies list* -->
+        <div *ngFor="let reply of webService.replies_list">
+          <!-- Bootstrap card start -->
+          <div class="card text-white bg-dark mb-3" style = "width: 50rem; text-align:center">
+            <div class="card-header">
+              <!-- the card header text -->
+              Date:
+              {{reply.date}}
+            </div>
+            <div class="card-body">
+              <!-- the card body text -->
+              Reply by {{reply.userName}}:
+              <br><br>
+              {{reply.replyComment}}
+              <br>
+              <br>
+              User ID:
+              {{reply.userId}}
+
+              Post Id:
+              {{reply.postId}}
+            </div>
+            <div class="card-footer">
+              <!-- the card footer text -->
+            </div>
+          </div>
+        </div>
+      </div> <!-- col -->
+    </div>
+<div style="padding:5px;">
+</div> <!-- col -->
+</div>

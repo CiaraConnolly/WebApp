@@ -1,0 +1,78 @@
+<!doctype html>
+  <head>
+    <meta charset="UTF-8">
+
+  </head>
+  <body>
+    <div  class="container" style="margin-top:90px;">
+
+                <!--Header 2-->
+                <div class="row align-items-start">
+                  <div class="col-2"  ></div>
+      
+                  <div class="col-8" style="text-align: center;">
+                    <h3>Image Share</h3>
+                  </div>
+      
+                  <div class="col-2"  ></div>
+              </div>
+
+        <!--New  test form-->
+        <div class="row align-items-start">
+          <div class="col-2"  ></div>
+
+          <div class="col-8" style="text-align: left;border-bottom:1px solid #222222;">
+            <p><strong>Add Image</strong></p>
+
+            <form method="POST" style="font-size: 10pt;" [formGroup]="subNewForm"  (ngSubmit)="submitNewAsset()" enctype="multipart/form-data">
+
+              <div class="form-group">
+                <label for="postComment" class="form-label"><strong>Comment</strong></label>
+                <input type="text" class="form-control" id="postComment" formControlName="postComment">
+              </div>
+
+              <div class="form-group">
+                <label for="filePath" class="form-label"><strong>File to Upload</strong></label>
+                <input type="file" class="form-control" id="filePath" (change)="onFileSelect($event)">
+              </div>
+          
+              <button type="submit" id="subNewForm2" class="btn btn-primary" style="margin-top:50px;">Submit</button> <br/><br/>
+              
+            </form>
+          </div>
+
+          <div class="col-2"  ></div>
+      </div>
+
+        <!-- View Posts Area-->
+        <div class="container" style="text-align:center">
+          <div style="padding:5px;">
+              <button class="btn btn-sm btn-danger" (click)="viewPosts()">View Posts</button>
+          </div>
+        <div class="container" style="text-align:center">
+          <div class="row">
+              <div class="col-sn-12">
+                <div *ngFor="let post of webService.posts_list">
+                  <div class="card text-white bg-dark mb-3" style = "width: 50rem; text-align:center">
+                    <div class="card-header">
+                      <img src = "{{webService.imagePath}}{{post.filePath}}" class="center" style="width: 500px;">
+                    </div>
+                    <div class="card-body">
+                      Comment:
+                      {{post.postComment}}
+                    </div>
+                    <div class="card-footer">
+                      Uploaded by:
+                      {{post.userName}}
+                      <br>
+                      Date:
+                      {{post.date}}
+                      <br>
+                      UserId:
+                      {{post.id}}
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- col -->
+          </div>
+        </div><!-- container -->
