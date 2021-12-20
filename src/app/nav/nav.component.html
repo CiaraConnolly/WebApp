@@ -6,14 +6,14 @@
  <li class="nav-item">
  <a class="nav-link" routerLink='/'>Home</a>
  </li>
- <li class="nav-item">
+ <li class="nav-item" *ngIf="webService.isLoggedIn()">
     <a class="nav-link" routerLink='/feed'>Your Feed</a>
 </li>
- <li class="nav-item">
+ <li class="nav-item" *ngIf="webService.isLoggedIn()">
  <a class="nav-link"
  routerLink='/upload'>Upload</a>
  </li>
- <li class="nav-item">
+ <li class="nav-item" *ngIf="webService.isLoggedIn()">
     <a class="nav-link" routerLink='/profile'>Profile</a>
 </li>
 <!--
@@ -23,11 +23,8 @@
 -->
 <div class = "form-inline ms-auto"
  style = "margin-right: 10px;">
- <ng-container
- *ngIf="isLoggedIn();
- else loggedOut">
- <button class="btn btn-outline-light"
- (click)="logOut()" routerLink='/'>Logout</button>
+ <ng-container *ngIf="webService.isLoggedIn(); else loggedOut">
+ <button class="btn btn-outline-light" (click)="logOut()" routerLink='/'>Logout</button>
  </ng-container>
 
  <ng-template #loggedOut>

@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
     console.log(this.webService.loggeduser)
     console.log(this.webService.loggeduser.userName)
     this.webService.getOneUser(this.loginForm.value)
+    this.loginForm.reset();
     }
 
 

@@ -25,20 +25,13 @@
                         <div class="card-header">
                           <!-- the card header text -->
                           Date:
-                          {{reply.date}}
+                          {{reply.date | date:'medium'}}
+                          <br>
+                          Reply by: {{reply.userName}}
                         </div>
                         <div class="card-body">
                           <!-- the card body text -->
-                          Reply by {{reply.userName}}:
-                          <br><br>
                           {{reply.replyComment}}
-                          <br>
-                          <br>
-                          User ID:
-                          {{reply.userId}}
-            
-                          Post Id:
-                          {{reply.postId}}
                         </div>
                         <div class="card-footer">
                        </div>

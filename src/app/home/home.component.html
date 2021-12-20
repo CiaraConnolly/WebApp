@@ -8,7 +8,7 @@
         <div class = "card-header">
         <!-- the card header text -->
         <h1>
-            Welcome to this Social Media App! TESTing
+            Welcome to this Social Media App!
         </h1>
         </div>
         <!-- Bootstrap card end -->
@@ -42,19 +42,17 @@
             <!-- the card body text -->
             Comment:
             {{post.postComment}}
-            <br>
+          </div>
+          <div class="card-footer">
             Uploaded by:
             {{post.userName}}
             <br>
-            UserId:
-            {{post.createdBy}}
+            Date:
+            {{post.date | date:'medium'}}
             <br>
-            PostId:
-            {{post.id}}
-          </div>
-          <div class="card-footer">
+            <br>
             <!-- the card footer text -->
-            <h4>Reply</h4>
+            <h4 style="text-align: left;">Reply</h4>
             <form method="POST" style="font-size: 10pt;" [formGroup]="replyForm"  (ngSubmit)="submitReply(post.id)" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="replyComment" class="form-label"></label>
@@ -71,40 +69,3 @@
     </div> <!-- col -->
   </div> <!-- row -->
 </div> <!-- container -->
-
-<!--COMMENTS-->
-<div class="container">
-    <div class="row"> <!-- row -->
-      <div class="col-sn-12"> <!-- col -->
-        <!-- for loop of replies list* -->
-        <div *ngFor="let reply of webService.replies_list">
-          <!-- Bootstrap card start -->
-          <div class="card text-white bg-dark mb-3" style = "width: 50rem; text-align:center">
-            <div class="card-header">
-              <!-- the card header text -->
-              Date:
-              {{reply.date}}
-            </div>
-            <div class="card-body">
-              <!-- the card body text -->
-              Reply by {{reply.userName}}:
-              <br><br>
-              {{reply.replyComment}}
-              <br>
-              <br>
-              User ID:
-              {{reply.userId}}
-
-              Post Id:
-              {{reply.postId}}
-            </div>
-            <div class="card-footer">
-              <!-- the card footer text -->
-            </div>
-          </div>
-        </div>
-      </div> <!-- col -->
-    </div>
-<div>
-</div> <!-- col -->
-</div>

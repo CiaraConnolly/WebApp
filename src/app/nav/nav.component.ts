@@ -9,26 +9,15 @@ import { WebService } from 'src/app/web.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  checkStatus: boolean = true;
 
-  constructor(public router: Router, ) { }
+  constructor(public router: Router, public webService: WebService) { }
 
   ngOnInit(): void {
 
   }
-  isLoggedIn(){
-  this.localStorageItem();
-  }
-
-  public localStorageItem(): boolean {
-    if (sessionStorage.getItem('loginId'))
-    return this.checkStatus
-    else
-    return true
-
-}
 
 logOut(){
   sessionStorage.removeItem('loginId');
+  sessionStorage.removeItem('loginUser');
 }
 }

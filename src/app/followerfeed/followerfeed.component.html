@@ -28,6 +28,14 @@
                   <div *ngFor="let follow of webService.following">
                     <div class="card text-white bg-dark mb-3" style = "width: 50rem; text-align:center">
                       <div class="card-header">
+                                    <!-- the card header text -->
+                        <!-- Display replies button -->
+                        <br>
+                        <div><!-- replies button div start -->
+                          <button class="btn btn-sm btn-danger" style="margin:5px; float: right;" [routerLink]="['/home', follow.id]">Display replies</button>
+                          <br>
+                        </div><!-- follow button div end -->
+                        <br>
                         <img src = "{{webService.imagePath}}{{follow.filePath}}" class="center" style="width: 500px;">
                       </div>
                       <div class="card-body">
@@ -38,7 +46,19 @@
                         {{follow.userName}}
                         <br>
                         Date:
-                        {{follow.date}}
+                        {{follow.date | date:'medium'}}
+                        <br>
+            <br>
+            <!-- the card footer text -->
+            <h4 style="text-align: left;">Reply</h4>
+            <form method="POST" style="font-size: 10pt;" [formGroup]="replyForm"  (ngSubmit)="submitReply(follow.id)" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="replyComment" class="form-label"></label>
+                <input type="textarea" class="form-control" id="replyComment" formControlName="replyComment">
+              </div>
+              <br>
+              <button type="submit" id="replyForm" class="btn btn-primary" style= "float: left;">Submit Reply</button> <br><br/><br/>
+            </form>
                       </div>
                       <div style="padding:5px;">
                     </div>

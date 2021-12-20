@@ -125,4 +125,15 @@ getFollowerFeed(){
         //console.log(str)
 })
 }
+
+isLoggedIn(): boolean {
+    if (sessionStorage.getItem('loginId')!= null){
+      return true;
+
+    }
+    else
+    {
+      return false;
+    }
+}
 }
