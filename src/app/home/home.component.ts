@@ -56,12 +56,14 @@ export class HomeComponent implements OnInit {
 
 
   follow(createdBy:any) {
+    console.log("adding follower")
+    console.log(createdBy)
+    this.f_id =  createdBy
+    sessionStorage.setItem('followerID',this.f_id);
+
     this.postUser(this.followerForm.value)
     .subscribe((response: any) => {
       console.log("adding follower")
-      console.log(createdBy)
-      this.f_id =  createdBy
-      sessionStorage.setItem('followerID',this.f_id);
       //console.log(this.f_id)
 
       //DARREN GAVE BELOW

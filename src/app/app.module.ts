@@ -13,12 +13,17 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { FollowerfeedComponent } from './followerfeed/followerfeed.component';
+import { RepliesComponent } from './replies/replies.component';
 
 var routes: any = [
   {
     path: '',
     component: HomeComponent
     },
+    {
+      path: 'home/:id',
+      component: RepliesComponent
+      },
     {
     path: 'upload',
     component: UploadComponent
@@ -50,7 +55,8 @@ var routes: any = [
     LoginComponent,
     UploadComponent,
     RegisterComponent,
-    FollowerfeedComponent
+    FollowerfeedComponent,
+    RepliesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,41 @@
 <body>
+  <!-- TITLE AREA-->
+<body><!-- body -->
+  <div class="container" style="margin-top:90px;"> <!-- the container -->
+    <div class="row"> <!-- row -->
+      <div class="col-sm-12"> <!-- column -->
+        <!-- Bootstrap card start -->
+        <div class="card text-white bg-primary mb-3" style = "width: 50rem; margin: auto; text-align:center;">
+          <div class = "card-header">
+          <!-- the card header text -->
+          <h1>
+            Welcome to your Profile Page!
+          </h1>
+          </div>
+          <!-- Bootstrap card end -->
+        </div>
+      </div> <!-- col -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+  <div  class="container" style="margin-top:90px;"></div>
+      <!--Header-->
+      <div class="row align-items-start">
+        <div class="col-2"  ></div>
+
+        <div class="col-8" style="text-align: center;">
+          <h3><strong>Welcome to your Profile Page!</strong></h3>
+        </div>
+
+        <div class="col-2"  ></div>
+    </div>
   <!-- View One User Area-->
-        <div class="container" style="margin-top:90px; text-align:center">
+        <div class="container" style="text-align:center">
             <div class="row">
                 <div class="col-sn-12">
                   <div >
                     <div class="card text-white bg-dark mb-3" style = "width: 50rem; text-align:center">
                       <div class="card-header">
-                        User Name:
-                        {{webService.user.userName}}
+                        <h4>{{webService.user.userName}}</h4>
                       </div>
                       <div class="card-body">
                         Name:
@@ -16,13 +44,14 @@
                         Surname:
                         {{webService.user.surName}}
                         <br>
-                        location:
+                        <br>
+                        Location:
                         {{webService.user.location}}
                         <br>
                         DOB:
                         {{webService.user.DOB}}
                         <br>
-                        email:
+                        Email:
                         {{webService.user.email}}
                       </div>
                       <div class="card-footer">

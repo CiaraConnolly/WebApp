@@ -36,10 +36,6 @@ viewImages() {
   this.webService.getImages();
   }
 
-viewPosts() {
-    this.webService.getPosts();
-    }
-
 submitNewAsset() {
   this.postMedia(this.subNewForm.value)
   .subscribe((response: any) => {

@@ -1,0 +1,49 @@
+<!-- TITLE AREA-->
+<body><!-- body -->
+    <div class="container" style="margin-top:90px;"> <!-- the container -->
+      <div class="row"> <!-- row -->
+        <div class="col-sm-12"> <!-- column -->
+          <!-- Bootstrap card start -->
+          <div class="card text-white bg-primary mb-3" style = "width: 50rem; margin: auto; text-align:center;">
+            <div class = "card-header">
+            <!-- the card header text -->
+            <h1>
+                Replies
+            </h1>
+            </div>
+            <!-- Bootstrap card end -->
+          </div>
+        </div> <!-- col -->
+      </div> <!-- row -->
+    </div> <!-- container -->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sn-12">
+                <div> <!-- ADDED THIS DIV, JUST FOR GEETING COUNTRY AND COUNTRY ID -->
+                <div class="card text-white bg-dark mb-3" style = "width: 50rem; text-align:center; margin: auto" *ngFor="let reply of webService.replies_list"><!-- then the second one in the header div -->
+                        <div class="card-header">
+                          <!-- the card header text -->
+                          Date:
+                          {{reply.date}}
+                        </div>
+                        <div class="card-body">
+                          <!-- the card body text -->
+                          Reply by {{reply.userName}}:
+                          <br><br>
+                          {{reply.replyComment}}
+                          <br>
+                          <br>
+                          User ID:
+                          {{reply.userId}}
+            
+                          Post Id:
+                          {{reply.postId}}
+                        </div>
+                        <div class="card-footer">
+                       </div>
+                </div><!-- ADDED THIS DIV, JUST FOR GEETING COUNTRY AND COUNTRY ID -->
+                </div>
+            </div> <!-- col -->
+        </div>
+    </div><!-- container -->

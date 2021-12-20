@@ -27,6 +27,17 @@
         <div class="card text-white bg-dark mb-3" style = "width: 50rem; text-align:center">
           <div class="card-header">
             <!-- the card header text -->
+                        <!-- Display replies button -->
+                        <br>
+                        <div><!-- replies button div start -->
+                          {{post.replyComment}}
+                          <button class="btn btn-sm btn-danger " style="margin:5px; float: right;" (click)="follow(post.createdBy)">Follow</button>
+                          <button class="btn btn-sm btn-danger" style="margin:5px; float: right;" (click)="getReplies(post.id)">Display replies</button>
+                          <button class="btn btn-sm btn-primary" style="margin:5px; float: right;" [routerLink]="['/home', post.id]">Test Replies</button>
+                          {{post.replyComment}}
+                          <br>
+                        </div><!-- follow button div end -->
+                        <br>
             <!-- Display post image -->
             <img src = "{{webService.imagePath}}{{post.filePath}}" class="center" style="width: 500px;">
           </div>
@@ -53,19 +64,8 @@
                 <input type="textarea" class="form-control" id="replyComment" formControlName="replyComment">
               </div>
               <br>
-              <button type="submit" id="replyForm" class="btn btn-primary">Submit Reply</button> <br/><br/>
+              <button type="submit" id="replyForm" class="btn btn-primary" style= "float: left;">Submit Reply</button> <br><br/><br/>
             </form>
-            <!-- Display replies button -->
-            <br>
-            <div><!-- replies button div start -->
-              <button class="btn btn-sm btn-danger" (click)="getReplies(post.id)">Display replies</button>
-              {{post.replyComment}}
-            </div><!-- replies button div end -->
-            <br>
-            <div><!-- follow button div start -->
-              <button class="btn btn-sm btn-danger" (click)="follow(post.createdBy)">Follow</button>
-              <br>
-            </div><!-- follow button div end -->
           </div>
           <!-- Bootstrap card end -->
         </div>
@@ -108,6 +108,6 @@
         </div>
       </div> <!-- col -->
     </div>
-<div style="padding:5px;">
+<div>
 </div> <!-- col -->
 </div>

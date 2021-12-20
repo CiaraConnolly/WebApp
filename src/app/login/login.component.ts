@@ -30,9 +30,7 @@ export class LoginComponent implements OnInit {
     console.log(this.webService.getLoginDetails(this.user, this.pass));
     console.log(this.loginForm.value);
     console.log(this.user)
-    console.log(this.pass)
     sessionStorage.setItem('loginUser',this.user);
-    sessionStorage.setItem('loginPass',this.pass);
     console.log(this.webService.loggeduser)
     console.log(this.webService.loggeduser.userName)
     this.webService.getOneUser(this.loginForm.value)

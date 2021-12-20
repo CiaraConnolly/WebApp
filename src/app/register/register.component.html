@@ -7,7 +7,7 @@
         <div class="col-2"  ></div>
 
         <div class="col-8" style="text-align: center;">
-          <h3>Register</h3>
+          <h3><strong>Please Register</strong></h3>
         </div>
 
         <div class="col-2"  ></div>
@@ -18,51 +18,50 @@
         <div class="col-2"  ></div>
 
         <div class="col-8" style="text-align: left;border-bottom:1px solid #222222;">
-          <p>Please Register</p>
 
           <form method="POST" style="font-size: 10pt;" [formGroup]="registerForm"  (ngSubmit)="submitNewUser()" enctype="multipart/form-data">
             <div class="form-group">
-              <label for="userName" class="form-label">User Name</label>
+              <label for="userName" class="form-label"><h5><strong>User Name</strong></h5></label>
               <input type="text" class="form-control" id="userName" formControlName="userName">
             </div>
 
             <div class="form-group">
-              <label for="name" class="form-label">Name</label>
+              <label for="name" class="form-label"><h5><strong>Name</strong></h5></label>
               <input type="string" class="form-control" id="name" formControlName="name">
             </div>
 
             <div class="form-group">
-              <label for="surName" class="form-label">Surname</label>
+              <label for="surName" class="form-label"><h5><strong>Surname</strong></h5></label>
               <input type="text" class="form-control" id="surName" formControlName="surName">
             </div>
 
             <div class="form-group">
-                <label for="location" class="form-label">Location</label>
+                <label for="location" class="form-label"><h5><strong>Location</strong></h5></label>
                 <input type="text" class="form-control" id="location" formControlName="location">
             </div>
 
             <div class="form-group">
-                <label for="DOB" class="form-label">DOB</label>
+                <label for="DOB" class="form-label"><h5><strong>DOB</strong></h5></label>
                 <input type="date" class="form-control" id="DOB" formControlName="DOB">
               </div>
 
 
               <div class="form-group">
-                <label for="email" class="form-label">Email</label>
+                <label for="email" class="form-label"><h5><strong>Email</strong></h5></label>
                 <input type="email" class="form-control" id="email" formControlName="email">
               </div>
 
               <div class="form-group">
-                <label for="password" class="form-label">Password</label>
+                <label for="password" class="form-label"><h5><strong>Password</strong></h5></label>
                 <input type="password" class="form-control" id="password" formControlName="password">
               </div>
 
               <div class="form-group">
-                <label for="about" class="form-label">About</label>
+                <label for="about" class="form-label"><h5><strong>About</strong></h5></label>
                 <input type="textarea" class="form-control" id="about" formControlName="about">
               </div>
               <br>
-              <p>Already have an account? <a href="#" routerLink='/login'>Login</a></p>
+              <h6><p>Already have an account? <a href="#" routerLink='/login'>Login</a></p></h6>
               <br>
         
             <button type="submit" id="registerForm" class="btn btn-primary" style="margin-top:50px;">Submit</button>
