@@ -32,8 +32,7 @@
                         <div><!-- replies button div start -->
                           {{post.replyComment}}
                           <button class="btn btn-sm btn-danger " style="margin:5px; float: right;" (click)="follow(post.createdBy)">Follow</button>
-                          <button class="btn btn-sm btn-danger" style="margin:5px; float: right;" (click)="getReplies(post.id)">Display replies</button>
-                          <button class="btn btn-sm btn-primary" style="margin:5px; float: right;" [routerLink]="['/home', post.id]">Test Replies</button>
+                          <button class="btn btn-sm btn-danger" style="margin:5px; float: right;" [routerLink]="['/home', post.id]">Display replies</button>
                           {{post.replyComment}}
                           <br>
                         </div><!-- follow button div end -->
