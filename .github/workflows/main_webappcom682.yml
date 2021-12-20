@@ -19,7 +19,7 @@ jobs:
       - name: npm build
         run: 
           npm install
-          - npm run build:build
+          npm run build
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
